@@ -1,0 +1,17 @@
+{
+  "name": "framy",
+  "version": "0.6.11",
+  "description": "Framy: turn frame data into combos!",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "./node_modules/.bin/mocha"
+  },
+  "devDependencies": {
+    "google-spreadsheet": "1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1"
+  }
+}
