@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "keabard",
+    "password": null,
+    "database": "framy",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "keabard",
+    "password": null,
+    "database": "framy_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "keabard",
+    "password": null,
+    "database": "framy",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

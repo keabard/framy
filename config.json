@@ -1,7 +1,7 @@
 {
     "databases": {
         "postgre": {
-            "url": "postgres://keabard:password@localhost/framy"
+            "url": "postgres://keabard@localhost/framy"
         }
     }
 }
