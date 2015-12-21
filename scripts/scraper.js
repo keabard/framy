@@ -1,5 +1,7 @@
 var GoogleSpreadsheet = require('google-spreadsheet');
 
+'http://watissf.dantarion.com/sf5/boxdox/stats/RSD'
+
 const RASHID_SHEET_ID = '1vAojjiCPwt9NYFBGA1zwcsWQYAsV6A7jMqzZsY2bp40';
 const CREDENTIALS = require('../Framy-d9194bf37da0.json')
 
