@@ -1,5 +1,5 @@
 var characters      = require('./characters.json');
-var models          = require('../models')
+var models          = require('../models');
 
 module.exports = {
     up: function (queryInterface, Sequelize) {

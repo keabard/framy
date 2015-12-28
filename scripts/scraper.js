@@ -1,21 +1,40 @@
-var GoogleSpreadsheet = require('google-spreadsheet');
+var _                   = require('lodash');
+var GoogleSpreadsheet   = require('google-spreadsheet');
+var models              = require('../models');
 
 'http://watissf.dantarion.com/sf5/boxdox/stats/RSD'
 
-const RASHID_SHEET_ID = '1vAojjiCPwt9NYFBGA1zwcsWQYAsV6A7jMqzZsY2bp40';
-const CREDENTIALS = require('../Framy-d9194bf37da0.json')
+const BETA_SHEET_ID = '1976rt8B91PqVCeYJAmcnW1uwVJ0H03QJtV-dJC5ohL8';
+const CREDENTIALS = require('../Framy-d9194bf37da0.json');
+const MOVES_NAMES_CORR_TABLE = {
+    'stand LP': 'LP',
+    'stand MP': 'MP',
+    'stand HP': 'HP',
+    'crouch LP': '2HP',
+    'crouch MP': '2HP',
+    'crouch HP': '2HP',
+    'stand LK': 'LK',
+    'stand MK': 'MK',
+    'stand HK': 'HK',
+    'crouch LK': '2LK',
+    'crouch MK': '2MK',
+    'crouch HK': '2HK'
+}
 
-var rashid_sheet = new GoogleSpreadsheet(RASHID_SHEET_ID);
+var beta_sheet = new GoogleSpreadsheet(BETA_SHEET_ID);
 
-
-rashid_sheet.useServiceAccountAuth(CREDENTIALS, function(err){
-    rashid_sheet.getInfo(function(title, updated, author, name, email, worksheets){
-        console.log(1);
-        console.log(title, updated, author, name, email, worksheets);
+beta_sheet.useServiceAccountAuth(CREDENTIALS, function(err){
+    beta_sheet.getInfo(function(err, infos){
+        beta3_worksheets = _.filter(infos.worksheets, function(worksheet){
+            return worksheet.title.endsWith('3');
+        });
+        beta3_worksheets.forEach(beta3_worksheet => {
+            beta3_worksheet.getCells({'min-col':1, 'max-col':10, 'min-row':1, 'max-row':19, 'return-empty': true}, function(err, rows){
+                
+                // models.move.create({
+                //     name: 
+                // })
+            })
+        })
     });
-
-    rashid_sheet.getRows(1, {}, function(err, rows){console.log('ROWS 1');console.log(rows);});
-
-    rashid_sheet.getCells(1, {'min-row':3, 'max-row':3, 'return-empty': true}, function(err, rows){console.log('ROWS 2');console.log(rows);});
 });
-
